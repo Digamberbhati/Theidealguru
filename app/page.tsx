@@ -108,7 +108,7 @@ export default function HomePage() {
       <section className="relative overflow-hidden bg-maroon text-white">
         <div className="absolute inset-0 opacity-25">
           <Image
-            src="/images/magazine-launch.jpg"
+            src="/jain.jpeg"
             alt="Attendees gathering during a community magazine launch event."
             fill
             sizes="100vw"
