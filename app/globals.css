@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --color-indigo: #1e2a5a;
+  --color-saffron: #e8590c;
+  --color-marigold: #f7b731;
+  --color-maroon: #5e1a2b;
+  --color-warm: #fffbf5;
+  --color-ink: #1f1f29;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  margin: 0;
+  background: var(--color-warm);
+  color: var(--color-ink);
+  font-family: var(--font-body), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #f7b731;
+  color: #1f1f29;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #e8590c;
+  outline-offset: 4px;
+}
+
+.signature-band {
+  background: linear-gradient(90deg, #e8590c 0%, #f7b731 100%);
+}
+
+.photo-reveal {
+  animation: photo-reveal 800ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.photo-reveal-delay {
+  animation-delay: 180ms;
+}
+
+@keyframes photo-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
