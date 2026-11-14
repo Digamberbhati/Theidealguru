@@ -19,27 +19,39 @@ export default function AboutPage() {
         description={site.hero.aboutDescription}
         image={{
           src: "/images/plaque-presentation.jpg",
-          alt: "A plaque is presented during a community event.",
+          alt: "Honoured guest receives a memento plaque and shawl during an event ceremony.",
         }}
       />
 
-      <section className="mx-auto grid max-w-7xl gap-10 px-5 py-10 sm:px-8 md:grid-cols-2 md:py-16 lg:px-10">
+      {/* Who we are & Vision block */}
+      <section className="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:px-8 md:grid-cols-2 md:py-16 lg:px-10 items-center">
         <div>
           <SectionHeading title={site.about.whoTitle} />
-          <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/75">
+          <p className="mt-6 text-lg leading-relaxed text-ink/80 max-w-[65ch]">
             {site.about.whoText}
           </p>
+          <p className="mt-4 text-base leading-relaxed text-ink/75 max-w-[65ch]">
+            By integrating quality academics, personalised career counselling, certified vocational learning, and dedicated wellness sessions, we empower families and students with lifelong support.
+          </p>
         </div>
-        <blockquote className="relative overflow-hidden rounded-[24px] bg-indigo px-7 py-8 text-white shadow-card sm:px-10 sm:py-10">
+        <blockquote className="relative overflow-hidden rounded-[24px] bg-indigo p-8 text-white shadow-card sm:p-10">
           <div className="signature-band absolute inset-x-0 top-0 h-1.5" />
-          <p className="font-heading text-2xl font-semibold">{site.about.visionTitle}</p>
-          <p className="mt-5 text-lg leading-relaxed text-white/85">“{site.vision}”</p>
+          <p className="font-heading text-xl font-semibold text-marigold">
+            {site.about.visionTitle}
+          </p>
+          <p className="mt-5 font-heading text-xl sm:text-2xl leading-relaxed text-white/95">
+            “{site.vision}”
+          </p>
         </blockquote>
       </section>
 
+      {/* Who we connect */}
       <section className="mx-auto max-w-7xl px-5 py-14 sm:px-8 md:py-20 lg:px-10">
-        <SectionHeading title={site.about.connectTitle} />
-        <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <SectionHeading
+          title={site.about.connectTitle}
+          description="Serving every pillar of our educational ecosystem with purposeful programs and resources."
+        />
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {site.about.connect.map((item, index) => (
             <article
               key={item.title}
@@ -52,52 +64,62 @@ export default function AboutPage() {
               <h3 className="mt-4 font-heading text-xl font-semibold text-indigo">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink/70">{item.text}</p>
+              <p className="mt-3 text-sm leading-relaxed text-ink/75 max-w-[65ch]">
+                {item.text}
+              </p>
             </article>
           ))}
         </div>
       </section>
 
+      {/* What makes us different */}
       <section className="bg-white">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-[0.8fr_1.2fr] md:items-center md:py-20 lg:px-10">
-          <SectionHeading title={site.about.differenceTitle} />
-          <ul className="grid gap-3 sm:grid-cols-2">
+          <SectionHeading
+            title={site.about.differenceTitle}
+            description="Our platform brings together all elements of personal and academic advancement under one cohesive roof."
+          />
+          <ul className="grid gap-4 sm:grid-cols-2">
             {site.about.differences.map((difference) => (
               <li
                 key={difference}
-                className="flex min-h-20 items-center rounded-2xl bg-warm px-5 py-4 font-medium text-indigo"
+                className="flex min-h-20 items-center rounded-2xl bg-warm px-6 py-5 font-medium text-indigo shadow-soft"
               >
-                <span className="mr-3 h-2.5 w-2.5 shrink-0 rounded-full bg-saffron" />
-                {difference}
+                <span className="mr-3.5 h-2.5 w-2.5 shrink-0 rounded-full bg-saffron" />
+                <span className="text-base font-semibold">{difference}</span>
               </li>
             ))}
           </ul>
         </div>
       </section>
 
+      {/* Photo strip */}
       <section className="mx-auto max-w-7xl px-5 py-14 sm:px-8 md:py-20 lg:px-10">
-        <div className="grid gap-5 sm:grid-cols-2">
-          <div className="relative h-72 overflow-hidden rounded-[24px] shadow-soft sm:h-96">
+        <div className="grid gap-6 sm:grid-cols-2">
+          <div className="relative h-72 sm:h-96 overflow-hidden rounded-[24px] shadow-card bg-indigo/5">
             <Image
               src="/images/felicitation.jpg"
-              alt="A participant is felicitated during an event."
+              alt="Participant being felicitated with ceremonial shawl during an event."
               fill
               sizes="(max-width: 640px) 100vw, 50vw"
               className="object-cover"
             />
           </div>
-          <div className="relative h-72 overflow-hidden rounded-[24px] shadow-soft sm:mt-12 sm:h-96">
+          <div className="relative h-72 sm:h-96 overflow-hidden rounded-[24px] shadow-card bg-indigo/5 sm:mt-8">
             <Image
               src="/images/children-honoured.jpg"
-              alt="Young participants are honoured at an event."
+              alt="Young students honoured with certificates at an educational gathering."
               fill
               sizes="(max-width: 640px) 100vw, 50vw"
               className="object-cover"
             />
           </div>
         </div>
-        <p className="mt-5 text-center text-sm text-ink/65">{site.about.photoCaption}</p>
+        <p className="mt-5 text-center font-heading text-sm font-medium text-ink/75">
+          {site.about.photoCaption}
+        </p>
       </section>
+
       <CTABanner title={site.tagline} />
     </SiteFrame>
   );
