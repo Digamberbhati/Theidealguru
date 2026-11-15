@@ -68,7 +68,21 @@ export function Footer() {
             <span className="mr-2 font-semibold text-white">{site.footerVisionLabel}:</span>
             {site.vision}
           </p>
-          <p className="mt-4 shrink-0 md:ml-8 md:mt-0">{site.copyright}</p>
+          <div className="mt-4 shrink-0 md:ml-8 md:mt-0 md:text-right">
+            <p>{site.copyright}</p>
+            <p className="mt-2">Version 1.0</p>
+            <p className="mt-2">
+              Developed &amp; Deployed by{" "}
+              <a
+                href="https://greatertechhub.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-white transition hover:text-marigold"
+              >
+                GreaterTechHub
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

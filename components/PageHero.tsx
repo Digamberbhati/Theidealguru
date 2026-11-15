@@ -41,8 +41,8 @@ export function PageHero({
         <div className="relative mx-auto h-[400px] w-full max-w-[520px] sm:h-[480px]">
           <div className="photo-reveal absolute right-0 top-0 h-[80%] w-[84%] overflow-hidden rounded-[24px] shadow-card bg-indigo/5">
             <Image
-              src="/images/felicitation.jpg"
-              alt="Participant being felicitated with ceremonial shawl during an event."
+              src="/images/jain.jpeg"
+              alt="Jain monks gathered during a community event."
               fill
               priority
               sizes="(max-width: 768px) 80vw, 40vw"

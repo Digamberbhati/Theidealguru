@@ -31,12 +31,6 @@ export function Header({ activeHref }: HeaderProps) {
             </a>
           ))}
         </nav>
-        <a
-          href="/contact/"
-          className="hidden items-center rounded-full bg-saffron px-6 py-2.5 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-indigo active:translate-y-0 xl:inline-flex"
-        >
-          {site.contactUs}
-        </a>
         <MobileMenu activeHref={activeHref} />
       </div>
       <nav
